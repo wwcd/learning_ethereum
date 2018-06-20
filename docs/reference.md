@@ -24,6 +24,11 @@
 
 - https://mshk.top/2017/11/go-ethereum-1-7-2/
 
+# 智能合约
+- https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts
+- https://ethereum.github.io/browser-solidity/#optimize=false&version=soljson-v0.4.24+commit.e67f0147.js
+- https://www.cnblogs.com/baizx/p/7469125.html
+
 # mics
 
 - https://ethfans.org/posts/how-does-ethereum-work-anyway
