@@ -1,8 +1,6 @@
 contract MyToken { 
     /* Public variables of the token */
     string public name;
-    string public symbol;
-    uint8 public decimals;
 
     /* This creates an array with all balances */
     mapping (address => uint256) public balanceOf;
@@ -11,11 +9,9 @@ contract MyToken {
     event Transfer(address indexed from, address indexed to, uint256 value);
 
     /* Initializes contract with initial supply tokens to the creator of the contract */
-    function MyToken(uint256 initialSupply, string tokenName, uint8 decimalUnits, string tokenSymbol) {
+    function MyToken(uint256 initialSupply, string tokenName) {
         balanceOf[msg.sender] = initialSupply;              // Give the creator all initial tokens                    
         name = tokenName;                                   // Set the name for display purposes     
-        symbol = tokenSymbol;                               // Set the symbol for display purposes    
-        decimals = decimalUnits;                            // Amount of decimals for display purposes        
     }
 
     /* Send coins */

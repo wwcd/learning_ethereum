@@ -52,7 +52,7 @@ func main() {
 		log.Fatalf("Failed to create authorized transactor: %v", err)
 	}
 	// Deploy a new awesome contract for the binding demo
-	address, tx, token, err := mytoken.DeployToken(auth, conn, big.NewInt(10000), "Contracts in GO!!!", 0, "GO!")
+	address, tx, token, err := mytoken.DeployToken(auth, conn, big.NewInt(10000), "Contracts in GO!!!")
 	if err != nil {
 		log.Fatalf("Failed to deploy new token contract: %v", err)
 	}
