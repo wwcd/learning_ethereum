@@ -34,10 +34,7 @@
 
 ## 启动私有链
 
-    wsl@fbi: ~/workdir/geth $ geth \
-       --datadir "./chain" \
-       --nodiscover \
-       console 2>>eth_output.log
+    wsl@fbi: ~/workdir/geth $ geth --datadir "./chain" --nodiscover console 2>>eth_output.log
     Welcome to the Geth JavaScript console!
 
     instance: Geth/v1.8.9-stable/linux-amd64/go1.10.1
@@ -69,6 +66,11 @@
 
     > miner.start(1)
     null
+
+挖矿默认使用第一个帐户地址
+
+- `miner.setEtherbase(address)`切换挖矿帐户地址
+- `web3.eth.coinbase`查看当前的挖矿帐户地址
 
 ## 停止挖矿
 
@@ -105,8 +107,8 @@
 
 ## 转帐
 
-    > web3.eth.sendTransaction({from:acc0,to:acc1,value:web3.toWei(3,"ether")})
-    "0x276843c6005815735a4fcc5a124124eb9f4fce7971dd4ed8ee285d890e3bb4b2"
+    > web3.eth.sendTransaction({from:acc0,to:acc1,value:web3.toWei(3,"ether")})                                                                                                                                                                │·
+    "0xd4b55127acc093da23ffb42b7ab6f373ff03217592e942f25c89b73eb7d10057"                                                                                                                                                                       │·
 
 ## 查询帐单状态
 
@@ -125,6 +127,26 @@
 	  },
 	  queued: {}
 	}
+
+查看交易的详细信息
+
+    > web3.eth.getTransaction("0xd4b55127acc093da23ffb42b7ab6f373ff03217592e942f25c89b73eb7d10057")                                                                                                                                            │·
+    {                                                                                                                                                                                                                                          │·
+      blockHash: "0x0000000000000000000000000000000000000000000000000000000000000000",                                                                                                                                                         │·
+      blockNumber: null,                                                                                                                                                                                                                       │·
+      from: "0x403698a2fc1d1548347167c4a337cab3e987c10c",                                                                                                                                                                                      │·
+      gas: 90000,                                                                                                                                                                                                                              │·
+      gasPrice: 18000000000,                                                                                                                                                                                                                   │·
+      hash: "0xd4b55127acc093da23ffb42b7ab6f373ff03217592e942f25c89b73eb7d10057",                                                                                                                                                              │·
+      input: "0x",                                                                                                                                                                                                                             │·
+      nonce: 18,                                                                                                                                                                                                                               │·
+      r: "0x7d6a50d6646c3383fe5a82bf6f20a1fe950864536e8563cfe5e6480a6586103f",                                                                                                                                                                 │·
+      s: "0x31e34541cb11de2266c2f0faf24546f2cfd6958dc689e53af105ef13070e66e0",                                                                                                                                                                 │·
+      to: "0xfe78c1a254ef3758405a501e0a2ca88947bd1700",                                                                                                                                                                                        │·
+      transactionIndex: 0,                                                                                                                                                                                                                     │·
+      v: "0x37",                                                                                                                                                                                                                               │·
+      value: 3000000000000000000                                                                                                                                                                                                               │·
+    }
 
 ## 查询
 
