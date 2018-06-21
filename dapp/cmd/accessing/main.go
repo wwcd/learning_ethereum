@@ -12,8 +12,9 @@ import (
 
 const (
 	rawurl          = "/home/wsl/workdir/geth/chain/geth.ipc"
-	contractAddress = "0xc6c6d7b4c1b6af38eea8c6c7cc6f08d99f86b920"
+	contractAddress = "0x47e864e3e2df7614d88f5be7fabef24d58541d9c"
 	walletAddress   = "0xfe78c1a254ef3758405a501e0a2ca88947bd1700"
+	// walletAddress = "0x403698a2fc1d1548347167c4a337cab3e987c10c"
 )
 
 // Accessing an Ethereum contract
