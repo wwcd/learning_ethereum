@@ -37,7 +37,7 @@ const key = `{
 
 const (
 	passphrase = "123456"
-	rawurl     = "/home/wsl/workdir/geth/chain/geth.ipc"
+	rawurl     = "http://127.0.0.1:8101"
 )
 
 // Deploying contracts to Ethereum
