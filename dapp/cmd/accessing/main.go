@@ -12,7 +12,7 @@ import (
 
 const (
 	rawurl          = "/home/wsl/workdir/geth/chain/geth.ipc"
-	contractAddress = "0xceae79064ff4efd410c8e97d57cf8b70d3daf5a0"
+	contractAddress = "0xe32effa05a964ebe5c839cb36be9975df45c6819"
 	walletAddress   = "0xfe78c1a254ef3758405a501e0a2ca88947bd1700"
 	// walletAddress = "0x403698a2fc1d1548347167c4a337cab3e987c10c"
 )

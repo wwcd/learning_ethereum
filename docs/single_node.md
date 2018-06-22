@@ -100,6 +100,8 @@
         at web3.js:5081:36
         at <anonymous>:1:1
 
+转帐失败是因为涉及到修改区块链的操作都需要用户授权即解锁帐户
+
 ## 解锁帐户
 
     > web3.personal.unlockAccount(acc0,"123456")
