@@ -37,7 +37,7 @@ const key = `{
 
 const (
 	passphrase      = "123456"
-	rawurl          = "http://127.0.0.1:8101"
+	rawurl          = "ws://127.0.0.1:8101"
 	contractAddress = "0xe32effa05a964ebe5c839cb36be9975df45c6819"
 	walletAddress   = "0x403698a2fc1d1548347167c4a337cab3e987c10c"
 	// walletAddress = "0xfe78c1a254ef3758405A501e0A2cA88947BD1700"
@@ -59,7 +59,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("Failed to create authorized transactor: %v", err)
 	}
-	tx, err := token.Transfer(auth, common.HexToAddress(walletAddress), big.NewInt(7777))
+	tx, err := token.Transfer(auth, common.HexToAddress(walletAddress), big.NewInt(7))
 	if err != nil {
 		log.Fatalf("Failed to request token transfer: %v", err)
 	}

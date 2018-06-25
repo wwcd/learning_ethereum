@@ -5,7 +5,7 @@
 
 ## 分别在NODE1和NODE2上启动
 
-	> geth --datadir "./chain" --nodiscover --ipcdisable --port 30301 --rpc --rpcport 8101 --networkid 12345 console 2>>eth_output.log
+	> geth --datadir "./chain" --nodiscover --ipcdisable --port 30301 --ws --wsport 8101 --rpc --rpcport 8102 --networkid 12345 console 2>>eth_output.log
 
 ## 查看NODE2节点信息
 

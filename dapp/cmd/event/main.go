@@ -6,15 +6,12 @@ import (
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
-
 	"gitlab.zte.com.cn/10067372/learning_ethereum/dapp/mytoken"
 )
 
 const (
 	rawurl          = "ws://127.0.0.1:8101"
 	contractAddress = "0xe32effa05a964ebe5c839cb36be9975df45c6819"
-	walletAddress   = "0xfe78c1a254ef3758405a501e0a2ca88947bd1700"
-	// walletAddress = "0x403698a2fc1d1548347167c4a337cab3e987c10c"
 )
 
 // Accessing an Ethereum contract
@@ -35,9 +32,15 @@ func main() {
 	}
 	fmt.Println("Token name:", name)
 
-	balance, err := token.BalanceOf(nil, common.HexToAddress(walletAddress))
+	sink := make(chan *mytoken.TokenTransfer)
+
+	sub, err := token.WatchTransfer(nil, sink, nil, nil)
 	if err != nil {
-		log.Fatalf("query balance error:%v", err)
+		log.Fatalf("Failed to watch: %v", err)
 	}
-	fmt.Printf("%s's balance is %s\n", walletAddress, balance)
+	defer sub.Unsubscribe()
+
+	for v := range sink {
+		log.Printf("From %s to %s value %v", v.From.String(), v.To.String(), v.Value)
+	}
 }

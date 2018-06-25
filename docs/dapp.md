@@ -26,6 +26,10 @@
     # 使用abigen生成go文件
     abigen --abi token.abi --pkg main --type Token --out token.go --bin token.bin
 
+启动geth时，由于智能合约的event需要wsrpc，所以启动参数中需要加入`--ws`和`--wsport`
+
+    geth --datadir "./chain" --nodiscover --ipcdisable --port 30301 --ws --wsport 8101 console 2>>eth_output.log
+
 
 ## 知识点
 

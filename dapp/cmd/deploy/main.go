@@ -37,7 +37,7 @@ const key = `{
 
 const (
 	passphrase = "123456"
-	rawurl     = "http://127.0.0.1:8101"
+	rawurl     = "ws://127.0.0.1:8101"
 )
 
 // Deploying contracts to Ethereum
