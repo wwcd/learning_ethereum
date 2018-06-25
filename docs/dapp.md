@@ -50,6 +50,10 @@ ABI等同lib库的头文件
 
 部署完成后，会生成一个智能合约地址，后续运行或查看时，需要使用到智能合约地址
 
+## 样例
+
+样例代码参见[dapp](../dapp)
+
 ## 参考
 
 - [Native DApps: Go bindings to Ethereum contracts](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts)
