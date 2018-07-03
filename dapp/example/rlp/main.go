@@ -21,7 +21,7 @@ func main() {
 
 	// 规则1: 单个小于128字节,编码为字节本身
 	b.Reset()
-	rlp.Encode(b, "a")
+	rlp.Encode(b, "0")
 	log.Println("Rule1 x if ∥x∥ = 1 ∧ x[0] < 128: '0' to", hex.EncodeToString(b.Bytes()))
 
 	// 规则2: 除规则1外,长度小于56的字节串,编码为前缀+字节串本身,前缀为0x80+字节串长度
