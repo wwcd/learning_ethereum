@@ -1,3 +1,5 @@
+// https://github.com/ethereum/wiki/wiki/Patricia-Tree
+
 package main
 
 import (
